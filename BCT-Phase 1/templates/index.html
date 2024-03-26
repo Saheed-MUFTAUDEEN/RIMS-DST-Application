@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web-based DST Application</title>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="logo-container">
+        <div class="logo">RIMS</div>
+      </div>
+      <nav class="main-nav">
+        <a href="/" class="nav-item">Home</a>
+        <a href="/" class="nav-item">Documentation</a>
+      </nav>
+    </header>
+    <main class="main-content">
+      <div class="general-info">
+        <h1 class="title">Decision Support Tool-Phase 1</h1>
+        <h2 class="info">
+          Do Blockchain technology-based solution suit project needs ?
+        </h2>
+        <p class="content">
+          This phase provide guidance to determine if blockchain-based solutions
+          is suitable for your project and should be explored further.
+        </p>
+      </div>
+      <div class="question-card">
+        <h1 class="question-title">{{ question }}</h1>
+        <form action="/" method="post" class="response-form">
+          <button type="submit" class="response-btn" name="answer" value="yes">
+            Yes
+          </button>
+          <button type="submit" class="response-btn" name="answer" value="no">
+            No
+          </button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web-based DST Application</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        line-height: 1.6;
+        background-color: #110b46;
+        position: relative;
+      }
+
+      .main-header {
+        background: #110b46;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-weight: 600;
+        color: #fff;
+        font-size: 1em;
+      }
+
+      .logo-container {
+        background-color: #f76707;
+        padding: 10px;
+        border-radius: 20px;
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      .header-text {
+        color: #fff;
+        font-weight: 600;
+        margin-left: 10px;
+      }
+
+      .header-left {
+        display: flex;
+        align-items: center;
+      }
+
+      .main-nav .nav-item {
+        color: #ffffff;
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: 600;
+      }
+
+      .main-nav .nav-item:hover {
+        border-bottom: 2px solid #333;
+      }
+
+      .main-content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        height: calc(100vh - 60px);
+      }
+
+      .general-info {
+        flex-basis: 40%;
+        padding: 20px;
+      }
+
+      .title {
+        color: #ffffff;
+        font-family: "Open Sans", sans-serif;
+        font-size: 60px;
+        line-height: 1.2;
+        font-weight: 700;
+        margin-bottom: 20px;
+        max-width: 90%;
+      }
+
+      .content {
+        font-family: "Open Sans", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        color: #adb5bd;
+        max-width: 90%;
+      }
+
+      .get-started-btn {
+        border: none;
+        display: inline-block;
+        font-weight: bold;
+        background-image: linear-gradient(to right, #f76707, #ff922b);
+        color: #fff;
+        padding: 15px 15px;
+        border-radius: 25px;
+        font-size: 20px;
+        cursor: pointer;
+        margin-bottom: 20px;
+        margin-top: 30px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      }
+
+      .get-started-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        background-image: linear-gradient(to right, #ff922b, #f76707);
+        text-decoration: none;
+      }
+
+      .image-container {
+        width: 80%;
+        max-width: 900px;
+        margin: 20px;
+        flex-basis: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .responsive-image {
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .image-container:hover .responsive-image {
+        transform: rotate(0deg) scale(1.05);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+      }
+
+      @media (max-width: 768px) {
+        .title {
+          font-size: 1.5em;
+        }
+
+        .header {
+          flex-direction: column;
+        }
+
+        .main-nav .nav-item {
+          margin-left: 0;
+          margin-right: 0;
+          margin-top: 10px;
+        }
+
+        .main-content {
+          flex-direction: column;
+        }
+
+        .general-info {
+          flex-basis: 100%;
+          width: 100%;
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="header-left">
+        <div class="logo-container">
+          <div class="logo">RIMS</div>
+        </div>
+        <div class="header-text">Decision Support Tool Phase 1</div>
+      </div>
+      <nav class="main-nav">
+        <a href="/index" class="nav-item">Get started</a>
+      </nav>
+    </header>
+    <main class="main-content">
+      <div class="general-info">
+        <h1 class="title">
+          Do blockchain technology-based solutions suit project needs?
+        </h1>
+        <p class="content">
+          This phase helps you to evaluate whether a blockchain-based solution
+          is suitable for your project and should be explored further. By
+          answering fourteen (14) targeted questions, you can assess the
+          suitability of blockchain technology (BCT) for your project or
+          organisational needs.
+        </p>
+        <button class="get-started-btn" onclick="location.href='/index'">
+          Get started
+        </button>
+      </div>
+      <div class="image-container">
+        <img
+          src="/static/bct.jpg"
+          alt="Blockchain in construction supply chain"
+          class="responsive-image"
+        />
+      </div>
+    </main>
+  </body>
+</html>

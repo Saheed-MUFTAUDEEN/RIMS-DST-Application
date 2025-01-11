@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web-based DST Application</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        line-height: 1.6;
+        background-color: #110b46;
+        position: relative;
+      }
+
+      .main-header {
+        background: #110b46;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .title {
+        color: #ffffff;
+        font-family: "Open Sans", sans-serif;
+        
+        font-size: clamp(1.5rem, 5vw, 60px);
+        line-height: 1.2;
+        font-weight: 700;
+        margin-bottom: 20px;
+       
+        max-width: 90%;
+      }
+
+      .info {
+        color: #adb5bd;
+        font-family: "Open Sans", sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        max-width: 650px;
+      }
+
+      .content {
+        font-family: "Open Sans", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        color: #adb5bd;
+        max-width: 500px;
+      }
+
+      .logo {
+        font-weight: 600;
+        color: #fff;
+        font-size: 1em;
+      }
+
+      .logo-container {
+        background-color: #f76707;
+        padding: 10px;
+        border-radius: 20px;
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      .header-text {
+        color: #fff;
+        font-weight: 600;
+        margin-left: 10px;
+      }
+
+      .header-left {
+        display: flex;
+        align-items: center;
+      }
+
+      .main-nav .nav-item {
+        color: #ffffff;
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: 600;
+      }
+
+      .main-nav .nav-item:hover {
+        border-bottom: 2px solid #333;
+      }
+
+      .main-content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        height: calc(100vh - 60px);
+      }
+
+      .general-info {
+        flex-basis: 40%;
+        padding: 20px;
+      }
+
+      .question-card {
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        width: 50%;
+        max-width: 600px;
+        margin: 20px;
+        height: 300px;
+        flex-basis: 40%;
+        text-align: center;
+        margin-left: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .question-title {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+        color: #110b46;
+      }
+
+      .response-form {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+      }
+
+      .response-btn {
+        border: none;
+        border-radius: 5px;
+        padding: 10px 30px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 1em;
+        font-weight: 600;
+        color: #110b46;
+        background-color: #f76707;
+      }
+
+      .response-btn:hover {
+        background-color: #ff922b;
+      }
+
+      @media (max-width: 768px) {
+        .question-card {
+          width: 80%;
+          padding: 20px;
+        }
+
+        .question-title {
+          font-size: 1.5em;
+        }
+
+        .header {
+          flex-direction: column;
+        }
+
+        .main-nav .nav-item {
+          margin-left: 0;
+          margin-right: 0;
+          margin-top: 10px;
+        }
+
+        .main-content {
+          flex-direction: column;
+        }
+
+        .general-info .question-card {
+          flex-basis: 100%;
+          width: 100%;
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="header-left">
+        <div class="logo-container">
+          <div class="logo">RIMS</div>
+        </div>
+        <div class="header-text">Decision Support Tool Phase 1</div>
+      </div>
+      <nav class="main-nav">
+        <a href="/" class="nav-item">Home</a>
+      </nav>
+    </header>
+    <main class="main-content">
+      <div class="general-info">
+        <h1 class="title">
+          Do blockchain technology-based solutions suit project needs?
+        </h1>
+      </div>
+      <div class="question-card">
+        <h1 class="question-title">{{ question }}</h1>
+
+        <form action="/index" method="post" class="response-form">
+          <button type="submit" class="response-btn" name="answer" value="yes">
+            Yes
+          </button>
+          <button type="submit" class="response-btn" name="answer" value="no">
+            No
+          </button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
